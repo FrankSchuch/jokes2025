@@ -1,3 +1,63 @@
+                                                                                                       #edited program pt.2
+jokes = [
+    {"type": "robbers", "setup": "Calder", "punchline": "Calder police — I've been robbed!"},
+    {"type": "tanks", "setup": "Tank", "punchline": "You're welcome!"},
+    {"type": "pencils", "setup": "Broken pencil", "punchline": "Nevermind, it's pointless!"}
+]
+
+def get_joke(joke_type):
+    for joke in jokes:
+        if joke["type"] == joke_type:
+            return joke
+    return None 
+
+def tell_joke(joke):
+    input("Knock knock...")
+    input(joke["setup"])
+    print(joke["punchline"])
+
+def add_new_joke(new_type=None, new_setup=None, new_punchline=None): 
+    print("--- Add a New Joke ---") 
+    if new_type is None: 
+        new_type = input("Enter a new joke category name: ").lower() 
+    if new_setup is None: 
+        new_setup = input("Enter the setup line: ") 
+    if new_punchline is None: 
+        new_punchline = input("Enter the punchline: ") 
+    new_joke = { "type": new_type, "setup": new_setup, "punchline": new_punchline } 
+    jokes.append(new_joke) 
+    print(f"Joke added under category '{new_type}'!")
+
+def program():
+    answer = input("Do you want to hear a joke? (yes or no): ").lower()
+    while answer == "yes":
+        category_list = [joke["type"] for joke in jokes]
+        print(f"Available categories: {', '.join(category_list)}")
+        
+        choice = input("Choose a category or type 'add' to add a new joke: ").lower()
+        
+        if choice == "add":
+            add_new_joke()
+        else:
+            selected_joke = get_joke(choice)
+            if selected_joke:
+                tell_joke(selected_joke)
+            else:
+                print("Sorry, that joke doesn't exist.")
+        
+        answer = input("Do you want to hear another joke or are you finished? (yes/finished): ").lower()
+        
+    if answer == "finished":
+            rating = int(input("Rate our game from 1–10: "))
+            print(str(rating * 10) + "% satisfaction rate")
+
+    recommend = input("Would you recommend this game to a friend? (yes/no): ").lower()
+    if recommend in ["yes", "maybe"]:
+        print("Thanks, we appreciate it!")
+    else:
+        print("Sorry you did not enjoy it.")
+
+program()
 
 
 
@@ -39,46 +99,107 @@
 #-------------------------------------------------------------------------------
 
                                                                                             #-----------------------------edited program--------------#
+# jokes = [
+#     {"type": "robbers", "setup": "Calder", "punchline": "Calder police — I've been robbed!"},
+#     {"type": "tanks", "setup": "Tank", "punchline": "You're welcome!"},
+#     {"type": "pencils", "setup": "Broken pencil", "punchline": "Nevermind, it's pointless!"}
+# ]
+
+
+# def get_joke(type):
+#     for joke in jokes:
+#         if joke["type"] == type:
+#             return joke
+#     return None
+
+# def tell_joke(joke):
+#     input("Knock knock... ")
+#     input(joke["setup"])
+#     print(joke["punchline"])
+
+
+# def program():
+#     answer = input("Do you want to hear a joke? (yes or no) ").lower()
+
+#     while answer == "yes":
+#         type = input("Choose a category: robbers, tanks, or pencils: ").lower()
+#         selected_joke = get_joke(type)
+
+#         if selected_joke:
+#             tell_joke(selected_joke)
+#         else:
+#             print("Sorry, that joke doesn't exist.")
+
+#         answer = input("Do you want to hear another joke or are you finished? ").lower()
+
+#     if answer == "finished":
+#         rating = int(input("Rate our game from 1–10: "))
+#         print(str(rating * 10) + "% satisfaction rate")
+
+#         recommend = input("Would you recommend this game to a friend? ").lower()
+#         if recommend in ["yes", "maybe"]:
+#             print("Thanks, we appreciate it!")
+#         else:
+#             print("Sorry you did not enjoy it.")
+
+# program()
+                                                                                                       #edited program pt.2
 jokes = [
     {"type": "robbers", "setup": "Calder", "punchline": "Calder police — I've been robbed!"},
     {"type": "tanks", "setup": "Tank", "punchline": "You're welcome!"},
     {"type": "pencils", "setup": "Broken pencil", "punchline": "Nevermind, it's pointless!"}
 ]
 
-
-def get_joke(type):
+def get_joke(joke_type):
     for joke in jokes:
-        if joke["type"] == type:
+        if joke["type"] == joke_type:
             return joke
-    return None
+    return None 
 
 def tell_joke(joke):
-    input("Knock knock... ")
+    input("Knock knock...")
     input(joke["setup"])
     print(joke["punchline"])
 
+def add_new_joke(new_type=None, new_setup=None, new_punchline=None): 
+    print("--- Add a New Joke ---") 
+    if new_type is None: 
+        new_type = input("Enter a new joke category name: ").lower() 
+    if new_setup is None: 
+        new_setup = input("Enter the setup line: ") 
+    if new_punchline is None: 
+        new_punchline = input("Enter the punchline: ") 
+    new_joke = { "type": new_type, "setup": new_setup, "punchline": new_punchline } 
+    jokes.append(new_joke) 
+    print(f"Joke added under category '{new_type}'!")
+
 def program():
-    answer = input("Do you want to hear a joke? (yes or no) ").lower()
-
+    answer = input("Do you want to hear a joke? (yes or no): ").lower()
     while answer == "yes":
-        type = input("Choose a category: robbers, tanks, or pencils: ").lower()
-        selected_joke = get_joke(type)
-
-        if selected_joke:
-            tell_joke(selected_joke)
+        category_list = [joke["type"] for joke in jokes]
+        print(f"Available categories: {', '.join(category_list)}")
+        
+        choice = input("Choose a category or type 'add' to add a new joke: ").lower()
+        
+        if choice == "add":
+            add_new_joke()
         else:
-            print("Sorry, that joke doesn't exist.")
-
-        answer = input("Do you want to hear another joke or are you finished? ").lower()
-
+            selected_joke = get_joke(choice)
+            if selected_joke:
+                tell_joke(selected_joke)
+            else:
+                print("Sorry, that joke doesn't exist.")
+        
+        answer = input("Do you want to hear another joke or are you finished? (yes/finished): ").lower()
+        
     if answer == "finished":
-        rating = int(input("Rate our game from 1–10: "))
-        print(str(rating * 10) + "% satisfaction rate")
+            rating = int(input("Rate our game from 1–10: "))
+            print(str(rating * 10) + "% satisfaction rate")
 
-        recommend = input("Would you recommend this game to a friend? ").lower()
-        if recommend == ["yes", "maybe"]:
-            print("Thanks, we appreciate it!")
-        else:
-            print("Sorry you did not enjoy it.")
+    recommend = input("Would you recommend this game to a friend? (yes/no): ").lower()
+    if recommend in ["yes", "maybe"]:
+        print("Thanks, we appreciate it!")
+    else:
+        print("Sorry you did not enjoy it.")
 
 program()
