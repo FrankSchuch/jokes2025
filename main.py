@@ -30,6 +30,11 @@ def add_new_joke(new_type=None, new_setup=None, new_punchline=None):
 
 def program():
     answer = input("Do you want to hear a joke? (yes or no): ").lower()
+
+    if answer == "no":
+        answer == input("are you finished?:").lower
+
+
     while answer == "yes":
         category_list = [joke["type"] for joke in jokes]
         print(f"Available categories: {', '.join(category_list)}")
@@ -48,14 +53,14 @@ def program():
         answer = input("Do you want to hear another joke or are you finished? (yes/finished): ").lower()
         
     if answer == "finished":
-            rating = int(input("Rate our game from 1–10: "))
-            print(str(rating * 10) + "% satisfaction rate")
+        rating = int(input("Rate our game from 1–10: "))
+        print(str(rating * 10) + "% satisfaction rate")
 
-    recommend = input("Would you recommend this game to a friend? (yes/no): ").lower()
-    if recommend in ["yes", "maybe"]:
-        print("Thanks, we appreciate it!")
-    else:
-        print("Sorry you did not enjoy it.")
+        recommend = input("Would you recommend this game to a friend? (yes/no): ").lower()
+        if recommend in ["yes", "maybe"]:
+            print("Thanks, we appreciate it!")
+        else:
+            print("Sorry you did not enjoy it.")
 
 program()
 
