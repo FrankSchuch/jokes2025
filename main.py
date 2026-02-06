@@ -1,3 +1,5 @@
+
+
                                                                                                        #edited program pt.2
 jokes = [
     {"type": "robbers", "setup": "Calder", "punchline": "Calder police — I've been robbed!"},
@@ -27,13 +29,11 @@ def add_new_joke(new_type=None, new_setup=None, new_punchline=None):
     new_joke = { "type": new_type, "setup": new_setup, "punchline": new_punchline } 
     jokes.append(new_joke) 
     print(f"Joke added under category '{new_type}'!")
-
 def program():
     answer = input("Do you want to hear a joke? (yes or no): ").lower()
 
     if answer == "no":
-        answer == input("are you finished?:").lower
-
+        answer = input("Are you finished? (yes/finished): ").lower()
 
     while answer == "yes":
         category_list = [joke["type"] for joke in jokes]
@@ -61,8 +61,6 @@ def program():
             print("Thanks, we appreciate it!")
         else:
             print("Sorry you did not enjoy it.")
-
-program()
 
 
 
